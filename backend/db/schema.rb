@@ -24,9 +24,6 @@ ActiveRecord::Schema.define(version: 2019_12_20_152251) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "level"
-    t.string "missile_size"
-    t.string "level_difficulty"
-    t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
