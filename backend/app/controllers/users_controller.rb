@@ -8,4 +8,8 @@ class UsersController < ApplicationController
                 }
             ])
     end
+
+    def create
+        @user = User.create(params.require(:users).permit(:name))
+    end
 end
