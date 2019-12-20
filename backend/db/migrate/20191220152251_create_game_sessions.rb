@@ -3,7 +3,7 @@ class CreateGameSessions < ActiveRecord::Migration[6.0]
     create_table :game_sessions do |t|
       t.integer :score
       t.string :missile_size
-      t.string :difficulty_level
+      t.integer :level
       t.integer :user_id
 
       t.timestamps
