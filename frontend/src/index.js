@@ -6,12 +6,10 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 
-
+// First Page
 function newOrExistingUser(){
-    // document.getElementById("login").innerHTML = ""
     const body = document.querySelector("body")
 
-    // document.querySelector("canvas").style.display = "none"
     const buttonDiv = document.createElement("div")
     buttonDiv.id = "newOrExistingUserBtn"
     body.append(buttonDiv)
@@ -36,46 +34,65 @@ function fetchUsers(){
     .then(json => console.log(json))
 }
 
+// Creating User
 function createNewUser(user){
+    document.querySelector("#newOrExistingUserBtn").innerHTML = ""
     const body = document.querySelector("body")
 
     const createH1 = document.createElement("h1")
     createH1.id = "h1FontPosition"
     createH1.innerText = "Create your name"
     body.append(createH1)
+
     const createCanvas = document.createElement("canvas")
     createCanvas.id = "canvas"
     body.append(createCanvas)
 
-    document.querySelector("#newOrExistingUserBtn").innerHTML = ""
 
     const createInput = document.createElement("input")
     createInput.type = "text"
     createCanvas.append(createInput)
 
+    const createBtn = document.createElement("button")
+    createBtn.id = "createId"
+    createBtn.innerText = "Create"
+
     body.append(createInput) 
-    
+    body.append(createBtn)
 }
 
+// Existing User
 function loginExistingUser(user){
+    document.querySelector("#newOrExistingUserBtn").innerHTML = ""
     const body = document.querySelector("body")
 
     const createH1 = document.createElement("h1")
     createH1.id = "h1FontPosition"
     createH1.innerText = "Enter your name"
     body.append(createH1)
+    
     const createCanvas = document.createElement("canvas")
     createCanvas.id = "canvas"
     body.append(createCanvas)
 
-    document.querySelector("#newOrExistingUserBtn").innerHTML = ""
 
     const createInput = document.createElement("input")
     createInput.type = "text"
-    createCanvas.append(createInput)
+    // createCanvas.append(createInput)
 
+    const createBtn = document.createElement("button")
+    createBtn.id = "existingId"
+    createBtn.innerText = "Next Page"
+    createBtn.addEventListener("click", chooseMissile)
+    
     body.append(createInput) 
+    body.append(createBtn)
 }
+
+
+
+
+
 
 // function addNamEventListner(){
 //     const name = document.querySelector("#choose-user-btn")
