@@ -54,6 +54,7 @@ function createNewUser(user){
     createCanvas.append(createInput)
 
     body.append(createInput) 
+    
 }
 
 function loginExistingUser(user){
