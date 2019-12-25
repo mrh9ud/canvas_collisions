@@ -1,2 +1,3 @@
 class GameSessionsController < ApplicationController
+    
 end

@@ -1461,3 +1461,779 @@ Processing by UsersController#index as */*
 Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
 
 
+Started GET "/users" for ::1 at 2019-12-23 19:57:33 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (1.1ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 49ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 13222)
+
+
+Started GET "/users" for ::1 at 2019-12-23 19:57:35 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1698)
+
+
+Started POST "/users" for ::1 at 2019-12-23 19:57:40 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"min", "user"=>{"name"=>"min"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 122)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users" for ::1 at 2019-12-23 19:57:56 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1697)
+
+
+Started GET "/users" for ::1 at 2019-12-23 19:58:33 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1698)
+
+
+Started POST "/users" for ::1 at 2019-12-23 19:58:44 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"min", "user"=>{"name"=>"min"}}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms | Allocations: 111)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users" for ::1 at 2019-12-23 19:58:57 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:01:11 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.1ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1694)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:01:12 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:02:30 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:02:31 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:03:01 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:03:01 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.1ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1680)
+
+
+Started POST "/users" for ::1 at 2019-12-23 20:03:08 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"min", "game_sessions"=>[{"score"=>0, "missile_size"=>"default", "level"=>0, "user_id"=>2}], "user"=>{"name"=>"min"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 120)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users" for ::1 at 2019-12-23 20:03:20 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1677)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:03:26 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started POST "/users" for ::1 at 2019-12-23 20:03:40 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"min", "game_sessions"=>[{"score"=>0, "missile_size"=>"default", "level"=>0, "user_id"=>2}], "user"=>{"name"=>"min"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 120)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users" for ::1 at 2019-12-23 20:04:47 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1679)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:05:48 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:05:49 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:06:29 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started POST "/users" for ::1 at 2019-12-23 20:06:37 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"min", "game_sessions"=>[{"score"=>0, "missile_size"=>"default", "level"=>0}], "user"=>{"name"=>"min"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users" for ::1 at 2019-12-23 20:07:04 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1677)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:09:18 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:09:44 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started POST "/users" for ::1 at 2019-12-23 20:09:54 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"min", "game_sessions"=>[{"score"=>0, "missile_size"=>"small", "level"=>0}], "user"=>{"name"=>"min"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 119)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users" for ::1 at 2019-12-23 20:10:14 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1679)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:10:15 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started POST "/users" for ::1 at 2019-12-23 20:10:18 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"min", "game_sessions"=>[{"score"=>0, "missile_size"=>"small", "level"=>0}], "user"=>{"name"=>"min"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 119)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:13:in `create'
+Started GET "/users" for ::1 at 2019-12-23 20:11:09 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1679)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:13:27 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:13:28 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:15:30 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:15:31 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.4ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:15:58 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (6.1ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:16:38 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:16:39 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:16:50 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:17:13 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:17:14 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:17:37 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:17:37 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:17:54 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:17:55 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.9ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:18:12 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (2.7ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 1683)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:18:13 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:19:13 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:19:13 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:19:22 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:19:23 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:20:36 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.7ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:20:37 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:20:49 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.6ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:20:50 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:21:08 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:21:08 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:21:34 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:21:34 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:21:45 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:21:45 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.5ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:22:01 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-23 20:22:01 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 09:18:19 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.8ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 1716)
+
+
+Started GET "/users" for ::1 at 2019-12-25 09:20:19 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 09:20:20 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:03:19 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.5ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 1715)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:03:20 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.4ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:03:49 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:04:01 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:04:26 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:04:27 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.4ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:07:53 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:09:07 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:09:47 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:11:31 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:11:32 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:12:12 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:12:40 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.8ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:12:41 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:14:26 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:15:42 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:16:01 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:16:39 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1683)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:16:50 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1680)
+
+
+Started GET "/users" for ::1 at 2019-12-25 10:16:57 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1680)
+
+

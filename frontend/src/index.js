@@ -1,13 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(){
-    // startGame()
     fetchUsers()
-    newOrExistingUser()
-    // addNamEventListner()
 })
 
+function fetchUsers(){
+    fetch("http://localhost:3000/users")
+    .then(res => res.json())
+    .then(users => {
+        users.forEach(user => newOrExistingUser(user))
+    })
+}
 
 // First Page
-function newOrExistingUser(){
+function newOrExistingUser(e){
     const body = document.querySelector("body")
 
     const buttonDiv = document.createElement("div")
@@ -16,22 +20,15 @@ function newOrExistingUser(){
 
     const createNewUserButton = document.createElement("button")
     createNewUserButton.innerText = "New User"
-    createNewUserButton.addEventListener("click", createNewUser)
+    createNewUserButton.addEventListener("click", ()=>createNewUser(e))
+
     const createExistingUserButton = document.createElement("button")
-
     createExistingUserButton.innerText = "Existing User"
-    createExistingUserButton.addEventListener("click", loginExistingUser)
+    createExistingUserButton.addEventListener("click", ()=>loginExistingUser(e))
 
-    const div = document.getElementById("choose-user-btn")
     buttonDiv.append(createNewUserButton)
     buttonDiv.append(createExistingUserButton)
 
-}
-
-function fetchUsers(){
-    fetch("http://localhost:3000/users")
-    .then(res => res.json())
-    .then(json => console.log(json))
 }
 
 // Creating User
@@ -59,9 +56,38 @@ function createNewUser(user){
 
     body.append(createInput) 
     body.append(createBtn)
+
+    createBtn.addEventListener("click", ()=>newUser(createInput.value))
+}
+
+function newUser(user){
+    // debugger
+    // const userName = document.querySelector("input").value
+    data = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept' : 'application/json'
+        },
+        body:JSON.stringify({
+            "name": user,
+            "game_sessions": [
+                {
+                    'score':0,
+                    'missile_size': "small",
+                    'level': 0,
+                    'user_id': user.id
+                }
+            ]
+        })
+    }
+    fetch("http://localhost:3000/users", data)
+    .then(res => res.json())
+    .then(json => {debugger})
 }
 
 // Existing User
+
 function loginExistingUser(user){
     document.querySelector("#newOrExistingUserBtn").innerHTML = ""
     const body = document.querySelector("body")
@@ -78,34 +104,29 @@ function loginExistingUser(user){
 
     const createInput = document.createElement("input")
     createInput.type = "text"
-    // createCanvas.append(createInput)
+    createInput.value = "Your name"
+    body.append(createInput) 
 
     const createBtn = document.createElement("button")
     createBtn.id = "existingId"
     createBtn.innerText = "Next Page"
-    createBtn.addEventListener("click", chooseMissile)
-    
-    body.append(createInput) 
     body.append(createBtn)
-}
 
-
-
-
-
-
-// function addNamEventListner(){
-//     const name = document.querySelector("#choose-user-btn")
-//     name.addEventListener("submit", checkUserStatus)
-// }
-
-// function checkUserStatus(user){
-//     if(user.currentTarget.username.value === )
-
-//     post request to json
-//     if json db has username
+    createBtn.addEventListener("click", ()=> validateExistingUser(user))
     
-// }
+}
+function validateExistingUser(user){
+    // debugger
+    // console.log(user)
+    const input = document.querySelector("input").value
+
+    if(input.toLowerCase() === user.name.toLowerCase()){
+        return chooseMissile(user)
+    }
+    else{
+        return alert("Create your name")
+    }
+}
 
 
 
