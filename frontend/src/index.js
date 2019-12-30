@@ -20,7 +20,7 @@ function newOrExistingUser(e){
 
     const createNewUserButton = document.createElement("button")
     createNewUserButton.innerText = "New User"
-    createNewUserButton.addEventListener("click", ()=>createNewUser(e))
+    createNewUserButton.addEventListener("click", createNewUser)
 
     const createExistingUserButton = document.createElement("button")
     createExistingUserButton.innerText = "Existing User"
@@ -57,33 +57,33 @@ function createNewUser(user){
     body.append(createInput) 
     body.append(createBtn)
 
-    createBtn.addEventListener("click", ()=>newUser(createInput.value))
+    createBtn.addEventListener("click", newUser)
 }
 
 function newUser(user){
-    // debugger
-    // const userName = document.querySelector("input").value
+    debugger
+    const userName = document.querySelector("input").value
     data = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Accept' : 'application/json'
         },
-        body:JSON.stringify({
-            "name": user,
+        body: JSON.stringify({
+            "name": userName,
             "game_sessions": [
                 {
                     'score':0,
                     'missile_size': "small",
-                    'level': 0,
-                    'user_id': user.id
+                    'level': 1,
+                    'user_id': 3
                 }
             ]
         })
     }
     fetch("http://localhost:3000/users", data)
     .then(res => res.json())
-    .then(json => {debugger})
+    .then(json => console.log(json))
 }
 
 // Existing User
