@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(){
-    fetchUsers()
+    newOrExistingUser()
+    
 })
 
-function fetchUsers(){
-    fetch("http://localhost:3000/users")
-    .then(res => res.json())
-    .then(users => {
-        users.forEach(user => newOrExistingUser(user))
-    })
-}
 
+    
 // First Page
-function newOrExistingUser(e){
+function newOrExistingUser(){
+    // debugger
     const body = document.querySelector("body")
 
     const buttonDiv = document.createElement("div")
@@ -24,7 +20,7 @@ function newOrExistingUser(e){
 
     const createExistingUserButton = document.createElement("button")
     createExistingUserButton.innerText = "Existing User"
-    createExistingUserButton.addEventListener("click", ()=>loginExistingUser(e))
+    createExistingUserButton.addEventListener("click", loginExistingUser)
 
     buttonDiv.append(createNewUserButton)
     buttonDiv.append(createExistingUserButton)
@@ -61,7 +57,6 @@ function createNewUser(user){
 }
 
 function newUser(user){
-    debugger
     const userName = document.querySelector("input").value
     data = {
         method: 'POST',
@@ -70,26 +65,17 @@ function newUser(user){
             'Accept' : 'application/json'
         },
         body: JSON.stringify({
-            "name": userName,
-            "game_sessions": [
-                {
-                    'score':0,
-                    'missile_size': "small",
-                    'level': 1,
-                    'user_id': 3
-                }
-            ]
+            "name": userName
         })
     }
     fetch("http://localhost:3000/users", data)
     .then(res => res.json())
-    .then(json => console.log(json))
+    .then(json => loginExistingUser(json))
 }
 
 // Existing User
-
 function loginExistingUser(user){
-    document.querySelector("#newOrExistingUserBtn").innerHTML = ""
+    document.querySelector("body").innerHTML = ""
     const body = document.querySelector("body")
 
     const createH1 = document.createElement("h1")
@@ -106,28 +92,156 @@ function loginExistingUser(user){
     createInput.type = "text"
     createInput.value = "Your name"
     body.append(createInput) 
-
+    
     const createBtn = document.createElement("button")
     createBtn.id = "existingId"
-    createBtn.innerText = "Next Page"
+    createBtn.innerText = "Log In"
     body.append(createBtn)
 
-    createBtn.addEventListener("click", ()=> validateExistingUser(user))
+    createBtn.addEventListener("click", validateExistingUser)
+
+    // const createBtn = document.createElement("button")
+    // createBtn.id = "existingId"
+    // createBtn.innerText = "Choose Level"
+    // body.append(createBtn)
+
+    // createBtn.addEventListener("click", ()=> validateExistingUser(user))
     
 }
-function validateExistingUser(user){
-    // debugger
-    // console.log(user)
-    const input = document.querySelector("input").value
 
-    if(input.toLowerCase() === user.name.toLowerCase()){
-        return chooseMissile(user)
-    }
-    else{
-        return alert("Create your name")
-    }
+
+
+function validateExistingUser(e){
+    // debugger
+
+    const input = e.target.parentElement.querySelector("input").value
+    fetch("http://localhost:3000/users")
+    .then(res => res.json())
+    .then(users => {
+            users.forEach(user => {
+                // debugger
+                if(user.name.toLowerCase() === input.toLowerCase()){
+                    return gameSessionStart(user)
+                } 
+        })
+    })
 }
 
+function gameSessionStart(user){
+    let data = {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            "user_id" : user.id
+        })
+    }
+    fetch("http://localhost:3000/game_sessions", data)
+    .then(res => res.json())
+    .then(json => chooseMissile(json))
+}
+
+function chooseMissile(game_session){
+    // debugger
+    document.querySelector("body").innerHTML = ""
+    const body = document.querySelector("body")
+    
+    const createNameP = document.createElement("p")
+    createNameP.innerText = `Hello ${game_session.user.name}`
+    body.append(createNameP)
+    
+    // const createScoreP = document.createElement("p")
+    // createP.innterText = `Your score is ${user.}`
+    const createH2 = document.createElement("h2")
+    createH2.id = "chooseMissile"
+    createH2.innerText = "Choose a your missile"
+    body.append(createH2)
+
+    const createFirstChoice = document.createElement("h2")
+    const createSecondChoice = document.createElement("h2")
+    const createThirdChoice = document.createElement("h2")
+
+    createFirstChoice.innerText = "Small"
+    createFirstChoice.id = "firstChoice"
+    createFirstChoice.addEventListener("click", (e)=>storeMissileSize(e,game_session))
+
+    createSecondChoice.innerText = "Medium"
+    createSecondChoice.id = "secondChoice"
+    createSecondChoice.addEventListener("click", (e)=>storeMissileSize(e,game_session))
+
+    createThirdChoice.innerText = "Large"
+    createThirdChoice.id = "thirdChoice"
+    createThirdChoice.addEventListener("click", (e)=>storeMissileSize(e,game_session))
+
+    body.append(createFirstChoice)
+    body.append(createSecondChoice)
+    body.append(createThirdChoice)
+
+    const createCanvas = document.createElement("canvas")
+    createCanvas.id = "canvas"
+    body.append(createCanvas)
+}
+
+
+function storeMissileSize(e, gameSession){
+    // debugger
+    let missileSize = e.target.innerText.toLowerCase()
+    
+    let data = {
+        method: "PATCH",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            "missile_size": missileSize
+        })
+    }
+
+    fetch(`http://localhost:3000/game_sessions/${gameSession.id}`, data)
+    .then(chooseLevel(gameSession))
+
+}
+
+function chooseLevel(gameSession){
+    document.querySelector("body").innerHTML = ""
+    const body = document.querySelector("body")
+    
+    const createNameP = document.createElement("p")
+    createNameP.innerText = `Hello ${gameSession.user.name}`
+    body.append(createNameP)
+    
+    // const createScoreP = document.createElement("p")
+    // createP.innterText = `Your score is ${user.}`
+    const createH2 = document.createElement("h4")
+    createH2.id = "chooseMissile"
+    createH2.innerText = "Choose your difficulty"
+    body.append(createH2)
+
+    const createFirstChoice = document.createElement("h2")
+    const createSecondChoice = document.createElement("h2")
+    const createThirdChoice = document.createElement("h2")
+
+    createFirstChoice.innerText = "Easy"
+    createFirstChoice.id = "firstChoice"
+    createFirstChoice.addEventListener("click", (e)=>startEasyGame(e,gameSession))
+
+    createSecondChoice.innerText = "Medium"
+    createSecondChoice.id = "secondChoice"
+    // createSecondChoice.addEventListener("click", (e)=>startMediumGame(e,gameSession))
+
+    createThirdChoice.innerText = "Hard"
+    createThirdChoice.id = "thirdChoice"
+    // createThirdChoice.addEventListener("click", (e)=>startHardGame(e,gameSession))
+
+    body.append(createFirstChoice)
+    body.append(createSecondChoice)
+    body.append(createThirdChoice)
+
+    const createCanvas = document.createElement("canvas")
+    createCanvas.id = "canvas"
+    body.append(createCanvas)
+}
 
 
 

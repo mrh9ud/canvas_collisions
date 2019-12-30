@@ -5,12 +5,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.create(params.require(:users).permit(:name))
+        user = User.create(user_params)
         render json: user.to_json(serialized_data)
     end
 
 
 private
+
+    def user_params
+        params.require(:user).permit(:name)
+    end
 
     def serialized_data
         {:only => [:id, :name],
